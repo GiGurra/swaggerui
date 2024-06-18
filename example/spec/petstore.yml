@@ -3,7 +3,7 @@ openapi: 3.0.0
 info:
   version: 1.0.0
   title: Simple Petstore
-  description: This is an example of embedded spec served with API using flowchartsman/swaggerui
+  description: This is an example of embedded spec served with API using gigurra/swaggerui
 paths:
   '/pet/{id}':
     parameters:

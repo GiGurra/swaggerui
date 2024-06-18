@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/flowchartsman/swaggerui"
+	"github.com/gigurra/swaggerui"
 )
 
 //go:embed spec/petstore.yml
