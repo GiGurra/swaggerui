@@ -2,7 +2,9 @@ package swaggerui
 
 import (
 	"embed"
+	"fmt"
 	"io/fs"
+	"log/slog"
 	"net/http"
 )
 
@@ -13,7 +15,11 @@ var swagfs embed.FS
 
 func byteHandler(b []byte) http.HandlerFunc {
 	return func(w http.ResponseWriter, _ *http.Request) {
-		w.Write(b)
+		_, err := w.Write(b)
+		if err != nil {
+			slog.Error(fmt.Sprintf("error writing swagger spec: %v", err))
+			return
+		}
 	}
 }
 
